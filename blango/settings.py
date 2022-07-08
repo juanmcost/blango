@@ -22,6 +22,14 @@ class Dev(Configuration):
 
   AUTH_USER_MODEL = "blango_auth.User"
 
+  REST_FRAMEWORK = {
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework.authentication.BasicAuthentication",
+            "rest_framework.authentication.SessionAuthentication",
+            "rest_framework.authentication.TokenAuthentication",
+        ]
+    }
+
   LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -94,6 +102,7 @@ class Dev(Configuration):
       'django.contrib.sites',
       'django.contrib.staticfiles',
       'rest_framework',
+      'rest_framework.authtoken',
       'blango_auth',
       'blog',
       'crispy_forms',
