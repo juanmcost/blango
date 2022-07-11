@@ -23,12 +23,15 @@ class Dev(Configuration):
   AUTH_USER_MODEL = "blango_auth.User"
 
   REST_FRAMEWORK = {
-        "DEFAULT_AUTHENTICATION_CLASSES": [
-            "rest_framework.authentication.BasicAuthentication",
-            "rest_framework.authentication.SessionAuthentication",
-            "rest_framework.authentication.TokenAuthentication",
-        ]
-    }
+      "DEFAULT_AUTHENTICATION_CLASSES": [
+          "rest_framework.authentication.BasicAuthentication",
+          "rest_framework.authentication.SessionAuthentication",
+          "rest_framework.authentication.TokenAuthentication",
+      ],
+      "DEFAULT_PERMISSION_CLASSES": [
+          "rest_framework.permissions.IsAuthenticatedOrReadOnly"
+      ],
+  }
 
   LOGGING = {
     "version": 1,
