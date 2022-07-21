@@ -6,7 +6,13 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["first_name", "last_name", "email"]
-        
+
+
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = "__all__"
+
 
 class TagField(serializers.SlugRelatedField):
     def to_internal_value(self, data):
