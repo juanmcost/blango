@@ -128,7 +128,11 @@ class Dev(Configuration):
       'allauth.socialaccount',
       'allauth.socialaccount.providers.google',
       'drf_yasg',
+      'versatileimagefield',
   ]
+
+  MEDIA_ROOT = BASE_DIR / "media"
+  MEDIA_URL = "/media/"
 
   SWAGGER_SETTINGS = {
     "SECURITY_DEFINITIONS": {
